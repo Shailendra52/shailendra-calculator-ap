@@ -1,16 +1,11 @@
-name: Build AAB
-on: [push]
-jobs:
-  build:
-    runs-on: ubuntu-20.04
-    steps:
-      - uses: actions/checkout@v2
-      - name: Build AAB
-        uses: digreatbrian/buildozer-action@v2
-        with:
-          buildozer-cmd: buildozer android release
-      - name: Upload AAB
-        uses: actions/upload-artifact@v3
-        with:
-          name: aab-file
-          path: bin/*.aab
+[app]
+title = Shailendra Calculator
+package.name = shailendracalculator
+package.domain = com.shailendra.calculator
+source.dir =.
+version = 2.0
+requirements = python3,kivy
+orientation = portrait
+
+[buildozer]
+log_level = 2
